@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h3></h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Querystring Data:</h2>
+    </div>
+    <div class="col-md-8 text-left">
+        <h3>@ViewData["QueryStringValue"]</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h2>Images folder content:</h2>
+        <img src="~/images/PSGraphic.jpg" alt="Pluralsight">
+    </div>
+</div>
