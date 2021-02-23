@@ -21,20 +21,4 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    - name: Publish
-      run: dotnet publish -c Release -o myapp 
-    
-    - name: Deploy Azure WebApp
-      uses: Azure/webapps-deploy@v2
-      with:
-        app-name: pswebappnm
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: './myapp'
 
-    - name: OWASP ZAP Baseline Scan
-      # You may pin to the exact commit or the version.
-      # uses: zaproxy/action-baseline@acd8e997263688cb49cb5ff8247a4b2758c548ab
-      uses: zaproxy/action-baseline@v0.4.0
-      with:
-        # Target URL
-        target: https://pswebappnm.azurewebsites.net
